@@ -123,11 +123,8 @@
 		7F988BA51E8FB16E000AB5F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7F988BAD1E8FB403000AB5F1 /* Todo+CoreDataClass.swift */,
-				7F988BAE1E8FB403000AB5F1 /* Todo+CoreDataProperties.swift */,
-				7F62D5101E91F66F0063D4C9 /* TodoDataAccessProvider.swift */,
-				E40DDFA520D7B268001EA011 /* TodoModel.swift */,
-				E40DDFA720D7B48A001EA011 /* TodoRealmAccessProvider.swift */,
+				E40DDFAC20D7BC1F001EA011 /* Core Data */,
+				E40DDFAB20D7BC15001EA011 /* Realm */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,6 +219,25 @@
 				19BFF564CB823DDDA9C8A0F6 /* Pods_Todolist_MVVMUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E40DDFAB20D7BC15001EA011 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				E40DDFA520D7B268001EA011 /* TodoModel.swift */,
+				E40DDFA720D7B48A001EA011 /* TodoRealmAccessProvider.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		E40DDFAC20D7BC1F001EA011 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				7F988BAD1E8FB403000AB5F1 /* Todo+CoreDataClass.swift */,
+				7F988BAE1E8FB403000AB5F1 /* Todo+CoreDataProperties.swift */,
+				7F62D5101E91F66F0063D4C9 /* TodoDataAccessProvider.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
