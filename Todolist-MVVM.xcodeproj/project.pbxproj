@@ -126,8 +126,8 @@
 				7F988BAD1E8FB403000AB5F1 /* Todo+CoreDataClass.swift */,
 				7F988BAE1E8FB403000AB5F1 /* Todo+CoreDataProperties.swift */,
 				7F62D5101E91F66F0063D4C9 /* TodoDataAccessProvider.swift */,
-				E40DDFA720D7B48A001EA011 /* TodoRealmAccessProvider.swift */,
 				E40DDFA520D7B268001EA011 /* TodoModel.swift */,
+				E40DDFA720D7B48A001EA011 /* TodoRealmAccessProvider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
