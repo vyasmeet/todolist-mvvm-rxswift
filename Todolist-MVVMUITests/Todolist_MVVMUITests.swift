@@ -1,9 +1,9 @@
 //
-//  Todolist_MVVMUITests.swift
-//  Todolist-MVVMUITests
+//  TodoListRealmViewModel.swift
+//  Todolist-MVVM
 //
-//  Created by Muhammad Ridho on 4/1/17.
-//  Copyright © 2017 Foo Bar. All rights reserved.
+//  Created by Meet Vyas on 18/06/18.
+//  Copyright © 2018 Foo Bar. All rights reserved.
 //
 
 import XCTest
