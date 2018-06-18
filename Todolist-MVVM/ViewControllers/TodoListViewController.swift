@@ -7,7 +7,7 @@ class TodoListViewController: UIViewController {
     @IBOutlet weak var todoListTableView: UITableView!
     @IBOutlet weak var addTodoButton: UIBarButtonItem!
     
-    var todoListViewModel = TodoListViewModel()
+    var todoListViewModel = TodoListRealmViewModel() // TodoListViewModel()
     
     var disposeBag = DisposeBag()
     
@@ -26,7 +26,7 @@ class TodoListViewController: UIViewController {
     private func populateTodoListTableView() {
         let observableTodos = todoListViewModel.getTodos().asObservable()
         
-        observableTodos.bindTo(todoListTableView.rx.items(cellIdentifier: "todoCellIdentifier", cellType: UITableViewCell.self)) { (row, element, cell) in
+        observableTodos.bind(to: todoListTableView.rx.items(cellIdentifier: "todoCellIdentifier", cellType: UITableViewCell.self)) { (row, element, cell) in
             
             cell.textLabel?.text = element.todo
             
@@ -37,7 +37,7 @@ class TodoListViewController: UIViewController {
             }
             
         }
-        .addDisposableTo(disposeBag)
+        .disposed(by: disposeBag)
         
     }
     
@@ -48,7 +48,7 @@ class TodoListViewController: UIViewController {
                 self.todoListTableView.deselectRow(at: indexPath, animated: false)
                 self.todoListViewModel.toggleTodoIsCompleted(withIndex: indexPath.row)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     // MARK: - subscribe to todoListTableView when item has been deleted, then remove todo to persistent storage via viewmodel
@@ -57,7 +57,7 @@ class TodoListViewController: UIViewController {
             .subscribe(onNext : { indexPath in
                 self.todoListViewModel.removeTodo(withIndex: indexPath.row)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
     // MARK: - event handling when add button tapped, and add todo to persistent storage via viewmodel
@@ -80,7 +80,7 @@ class TodoListViewController: UIViewController {
                     self.present(addTodoAlert, animated: true, completion: nil)
                 }
             )
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     override func didReceiveMemoryWarning() {

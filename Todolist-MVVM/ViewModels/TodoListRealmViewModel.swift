@@ -1,18 +1,26 @@
+//
+//  TodoListRealmViewModel.swift
+//  Todolist-MVVM
+//
+//  Created by Meet Vyas on 18/06/18.
+//  Copyright © 2018 Foo Bar. All rights reserved.
+//
+
 import Foundation
 import RxSwift
-import CoreData
+import RealmSwift
 
-struct TodoListViewModel {
+struct TodoListRealmViewModel {
     
-    private var todos = Variable<[Todo]>([])
-    private var todoDataAccessProvider = TodoDataAccessProvider()
+    private var todos = Variable<[TodoModel]>([])
+    private var todoDataAccessProvider = TodoRealmAccessProvider()
     private var disposeBag = DisposeBag()
     
     init() {
         fetchTodosAndUpdateObservableTodos()
     }
     
-    public func getTodos() -> Variable<[Todo]> {
+    public func getTodos() -> Variable<[TodoModel]> {
         return todos
     }
     
@@ -42,3 +50,4 @@ struct TodoListViewModel {
     }
     
 }
+
