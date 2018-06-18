@@ -24,7 +24,7 @@ class TodoListViewController: UIViewController {
     
     // MARK: - perform a binding from observableTodo from ViewModel to todoListTableView
     private func populateTodoListTableView() {
-        var observableTodos = todoListViewModel.getTodos().asObservable()
+        let observableTodos = todoListViewModel.getTodos().asObservable()
         
         observableTodos.bindTo(todoListTableView.rx.items(cellIdentifier: "todoCellIdentifier", cellType: UITableViewCell.self)) { (row, element, cell) in
             
