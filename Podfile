@@ -8,6 +8,7 @@ target 'Todolist-MVVM' do
   # Pods for Todolist-MVVM
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RealmSwift'
 
   target 'Todolist-MVVMTests' do
     inherit! :search_paths
