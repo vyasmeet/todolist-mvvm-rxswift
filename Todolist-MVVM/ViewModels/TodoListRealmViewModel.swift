@@ -18,6 +18,7 @@ struct TodoListRealmViewModel {
     
     init() {
         fetchTodosAndUpdateObservableTodos()
+        print("Realm ==> \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
     }
     
     public func getTodos() -> Variable<[TodoModel]> {
